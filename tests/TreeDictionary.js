@@ -58,6 +58,43 @@ describe('TreeDictionary', function() {
 			console.log('The Tree ', myDictionary.getTree());
     });
 
+		it('should insert several items (1 root, 2 left, and 1 right) and retrieve the lowest one expect the cost to be 3 the height of the lowest element', function() {
+			var myDictionary = new TreeDictionary();
+
+			myDictionary.insert(5);
+			myDictionary.insert(3);
+			myDictionary.insert(2);
+			myDictionary.insert(8);
+
+			// Zero after insertion to get only the cost of the search
+			myDictionary.cost = 0;
+
+			myDictionary.get(2);
+			expect(myDictionary.cost).toBe(3);
+
+			console.log('The cost of this search is ' + myDictionary.cost);
+			console.log('The Tree ', myDictionary.getTree());
+    });
+
+		it('should insert several items (1 root, 2 left, and 1 right) and retrieve from the right side (for coverage) one expect the cost to be 2', function() {
+			var myDictionary = new TreeDictionary();
+
+			myDictionary.insert(5);
+			myDictionary.insert(3);
+			myDictionary.insert(2);
+			myDictionary.insert(8);
+			myDictionary.insert(18);
+
+			// Zero after insertion to get only the cost of the search
+			myDictionary.cost = 0;
+
+			myDictionary.get(8);
+			expect(myDictionary.cost).toBe(2);
+
+			console.log('The cost of this search is ' + myDictionary.cost);
+			console.log('The Tree ', myDictionary.getTree());
+    });
+
 		afterAll(function() {
 
 		});
