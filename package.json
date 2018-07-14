@@ -1,7 +1,7 @@
 {
-  "name": "every",
+  "name": "dictionary.js",
   "version": "1.0.0",
-  "description": "The starting point for projects.",
+  "description": "JavaScript implementation of a dictionary using various data structures.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start"
